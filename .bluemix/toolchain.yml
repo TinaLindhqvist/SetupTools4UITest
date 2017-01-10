@@ -20,28 +20,7 @@ sample-build:
     name: "{{name}}"
     ui-pipeline: true
     configuration: 
-     content: 
-      stages:
-      - name: BUILD
-        inputs:
-        - type: git
-          branch: master
-          service: ${SAMPLE_REPO}
-        triggers:
-        - type: commit
-        jobs:
-        - name: Build
-          type: builder
+     content: $file(pipeline.yml)
      execute: true
     services: ["sample-repo"]
   hidden: [form, description]
-
-
-# Pipelines
-sample-build:
-  service_id: pipeline
-  parameters:
-    name: SetUpPipeline
-    ui-pipeline: true
-    stages:
-    - name: all-in-stage
