@@ -15,10 +15,3 @@ sample-build:
     ui-pipeline: true
     stages:
     - name: all-in-stage
-      inputs:
-      - url: https://github.com/TinaLindhqvist/AlmostEmpty.git
-        type: git
-        branch: master
-      jobs:
-      - name: Build
-        type: builder    
