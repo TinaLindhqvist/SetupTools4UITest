@@ -1,15 +1,27 @@
 ---
 stages:
-- name: AllInStage
+- name: BuildStage
   inputs:
   - type: git
     branch: master
     service: ${REPO}
   triggers:
   - type: commit
+  properties:
+  - name: WEB_UNDER_TEST
+    value: undefined
+    type: text
   jobs:
-  - name: BuildJob
+  - name: CurlScriptJob
     type: builder
     script: |
       #!/bin/bash
-      echo "Testing"
+      export WEB_UNDER_TEST="http://atesttool.mybluemix.net"
+      echo -e "\n----------------------------------------------------------------------------------"
+      echo "Using curl to test site: $WEB_UNDER_TEST"
+      echo -e "\n----------------------------------------------------------------------------------"
+      #echo "------------------------------------- HEADER -------------------------------------"
+      #curl -I $WEB_UNDER_TEST
+      echo "------------------------------------ CONTENTS ------------------------------------"
+      curl $WEB_UNDER_TEST
+      #curl --help
