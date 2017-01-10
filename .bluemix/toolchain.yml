@@ -11,14 +11,18 @@ sample-repo:
 sample-build:
   service_id: pipeline
   parameters:
-    #name:
+    name: SetUpPipeline
     ui-pipeline: true
-    configuration: 
-     stages:
-      - name: all-in-stage
-        execute: true
+    stages:
+    - name: all-in-stage
+      inputs:
+      - url: https://github.com/TinaLindhqvist/AlmostEmpty.git
+        type: git
+        branch: master
+      jobs:
+      - name: Build
+        type: builder    
 
-  hidden: [form, description]
   
   
 #Web IDE
