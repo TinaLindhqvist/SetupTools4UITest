@@ -23,4 +23,3 @@ sample-build:
      content: $file(pipeline.yml)
      execute: true
     services: ["sample-repo"]
-  hidden: [form, description]
