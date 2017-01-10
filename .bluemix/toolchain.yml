@@ -10,6 +10,30 @@ sample-repo:
 # Pipelines
 sample-build:
   service_id: pipeline
+  parameters:
+    #name:
+    ui-pipeline: true
+    configuration: 
+     stages:
+      - name: all-in-stage
+        inputs:
+          - type: git
+            branch: master
+            #Service: 
+         triggers:
+            - type: commit
+        jobs:
+          - name: Build
+            type: builder
+          - name: Blue-Green Deploy
+            type: deployer
+            script: |
+              #!/bin/bash
+              # Push app
+     execute: true
+
+  hidden: [form, description]
+  
   
 #Web IDE
 webide:
