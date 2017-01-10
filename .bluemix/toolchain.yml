@@ -13,7 +13,7 @@ repo:
 build:
   service_id: pipeline
   parameters:
-    name: "{{name}}"
+    name: ""
     ui-pipeline: false
     configuration: 
      content: $file(pipeline.yml)
