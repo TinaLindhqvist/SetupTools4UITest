@@ -6,13 +6,15 @@ version: 0.1
 # Github repos
 repo:
   service_id: githubpublic
+  parameters:
+   has_issues: false
 
 # Pipelines
 build:
   service_id: pipeline
   parameters:
     name: "{{name}}"
-    ui-pipeline: true
+    ui-pipeline: false
     configuration: 
      content: $file(pipeline.yml)
      env:
