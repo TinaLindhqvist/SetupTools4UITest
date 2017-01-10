@@ -7,9 +7,6 @@ version: 0.1
 repo:
   service_id: githubpublic
   parameters:
-    repo_name: "{{name}}"
-    repo_url: https://github.com/TinaLindhqvist/AlmostEmpty
-    type: clone
     has_issues: true
 
 
