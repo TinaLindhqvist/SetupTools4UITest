@@ -10,8 +10,6 @@ stages:
   jobs:
   - name: BuildJob
     type: builder
-  - name: DeployJob
-    type: deployer
     script: |
       #!/bin/bash
       echo "Testing"
