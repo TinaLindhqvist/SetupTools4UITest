@@ -29,4 +29,3 @@ build:
       CF_API_URL: ""
      execute: false
     services: ["repo"]
-  hidden: [form, description]
