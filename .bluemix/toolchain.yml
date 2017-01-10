@@ -16,21 +16,7 @@ sample-build:
     configuration: 
      stages:
       - name: all-in-stage
-        inputs:
-          - type: git
-            branch: master
-            #Service: 
-         triggers:
-            - type: commit
-        jobs:
-          - name: Build
-            type: builder
-          - name: Blue-Green Deploy
-            type: deployer
-            script: |
-              #!/bin/bash
-              # Push app
-     execute: true
+        execute: true
 
   hidden: [form, description]
   
