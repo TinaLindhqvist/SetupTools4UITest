@@ -6,9 +6,6 @@ version: 0.1
 # Github repos
 repo:
   service_id: githubpublic
-  parameters:
-    has_issues: true
-
 
 # Pipelines
 build:
