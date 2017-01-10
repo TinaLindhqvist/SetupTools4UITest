@@ -4,7 +4,7 @@ description: "This toolchain will be used in Functional System Test.\n Click CRE
 version: 0.1
 
 # Github repos
-sample-repo:
+repo:
   service_id: githubpublic
   parameters:
     repo_name: "{{name}}"
@@ -14,12 +14,19 @@ sample-repo:
 
 
 # Pipelines
-sample-build:
+build:
   service_id: pipeline
   parameters:
     name: "{{name}}"
     ui-pipeline: true
     configuration: 
      content: $file(pipeline.yml)
-     execute: true
-    services: ["sample-repo"]
+     env:
+      REPO: "repo"
+      CF_APP: ""
+      CF_SPACE_ID: ""
+      CF_ORGANIZATION_ID: ""
+      CF_API_URL: ""
+     execute: false
+    services: ["repo"]
+  hidden: ["form"]
