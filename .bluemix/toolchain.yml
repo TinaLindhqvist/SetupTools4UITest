@@ -15,7 +15,7 @@ repo:
 build:
   service_id: pipeline
   parameters:
-    ui-pipeline: false
+    ui-pipeline: true
     configuration: 
      content: $file(pipeline.yml)
      env:
