@@ -20,3 +20,24 @@ build:
       REPO: "repo"
      execute: true
     services: ["repo"]
+    
+#Web IDE
+webide:
+  service_id: orion
+  
+#Slack
+slack:
+  service_id: slack
+  
+#PagerDuty
+pagerduty:
+  service_id: pagerduty
+  
+#SauceLabs
+saucelabs:
+  service_id: saucelabs
+  
+#OtherTool
+othertool:
+  service_id: customtool
+
