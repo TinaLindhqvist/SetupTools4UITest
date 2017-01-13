@@ -9,19 +9,15 @@ stages:
   - type: commit
   properties:
   - name: WEB_UNDER_TEST
-    value: undefined
+    value: "http://atesttool.mybluemix.net"
     type: text
   jobs:
   - name: CurlScriptJob
     type: builder
     script: |
       #!/bin/bash
-      export WEB_UNDER_TEST="http://atesttool.mybluemix.net"
-      echo -e "\n----------------------------------------------------------------------------------"
+      echo -e "----------------------------------------------------------------------------------"
       echo "Using curl to test site: $WEB_UNDER_TEST"
-      echo -e "\n----------------------------------------------------------------------------------"
-      echo "------------------------------------- HEADER -------------------------------------"
-      curl -I $WEB_UNDER_TEST
       echo "------------------------------------ CONTENTS ------------------------------------"
       curl $WEB_UNDER_TEST
       #curl --help
