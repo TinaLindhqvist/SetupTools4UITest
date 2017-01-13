@@ -1,6 +1,6 @@
 ---
 stages:
-- name: BuildStage
+- name: ScriptStage
   inputs:
   - type: git
     branch: master
