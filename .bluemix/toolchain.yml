@@ -1,8 +1,7 @@
 ---
 name: "Toolchain Template to SetUp"
 description: "Toolchain template to be used in Functional System Test.\n Click CREATE to start."
-#image: data:image/png;base64,$file(TC_Setup_icon.png,base64)
-image: data:image/png, $file(TC_Setup_icon.png)
+image: data:image/png;base64,$file(TC_Setup_icon.png,base64)
 icon: data:image/png;base64,$file(toolchainIcon_UItest.png,base64)
 version: 0.1
 
